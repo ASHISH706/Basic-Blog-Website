@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+
+    <h1>EDIT YOUR <span>BLOG<span class="dot">.</span></span></h1>
+    <form action="/update/<%= ind %>" method="POST" style="text-align: center;">
+        <div>
+            <input style="width: 40%; height:35px" type="text" name="title1" value="<%= pst.title %>" placeholder="title"
+                required>
+        </div>
+        <div class="py-4">
+            <textarea style="height: 200px; width: 40%; padding: 0.5rem;" name="content1" placeholder="content"
+                required><%= pst.content %></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-outline-success py-1 mx-2">Update</button>
+        </div>
+    </form>
+
+
+    <div class="pt-4 mt-4">
+        <%- include("partials/footer.ejs") %>
+    </div>

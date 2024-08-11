@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+
+    <h1>WELCOME TO <span>BLOG<span class="dot">.</h1>
+    <div class="card-container">
+        <% pst.forEach((xyz,inx)=> { %>
+            <div class="row g-0 border border-warning rounded-4 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative col-md-6 col p-4 d-flex flex-column position-static card"
+                style="background-color: rgb(255, 253, 250);">
+
+                <h3 class="mb-0">
+                    <%=xyz.title%>
+                </h3>
+                <div class="text-body-secondary">
+                    <%=xyz.date%>
+                        <hr class="my-1">
+                </div>
+                <p class="px-3 my-4" style="font-style: italic">
+                    "<%= xyz.content %>"
+                </p>
+                <form action="/delete" method="POST" class="mt-3">
+                    <input type="hidden" name="index" value="<%= inx %>">
+                    <button type="submit" class="btn btn-outline-danger" >DELETE</button>
+                </form>
+                <form action="/edit/<%= inx %>" method="GET" class="mt-3">
+                    <button type="submit" class="btn btn-outline-warning">EDIT</button>
+                </form>
+
+            </div>
+            <% }); %>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
