@@ -1,5 +1,5 @@
 import e from "express";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 
 const app = e();
 const port = 3000;
@@ -7,7 +7,7 @@ const posts = [];
 
 
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(e.urlencoded({ extended: true }));
 app.use(e.static("public"));
 
 app.get("/", (req, res) => {
@@ -51,8 +51,8 @@ app.post('/update/:index', (req, res) => {
     posts[index].title = req.body.title1;
     posts[index].content = req.body.content1;
     res.redirect("/");
-})
+});
 
 app.listen(port, () => {
     console.log(`server is active at ${port}`);
-})
+});
