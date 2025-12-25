@@ -33,3 +33,22 @@ Make sure you have **Node.js** and **npm** installed:
 ```bash
 node -v
 npm -v
+---
+
+## 🛠 Installation Instructions
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/ASHISH706/Basic-Blog-Website.git
+
+2.Navigate to project folder
+Copy code "cd Basic-Blog-Website"
+
+3.Install dependencies
+Copy code "npm install"
+
+4.Start the server
+Copy code "npm start"
+
+5.Visit in browser
+http://localhost:3000
